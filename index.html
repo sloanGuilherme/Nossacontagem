@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Feliz Dia dos Namorados</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      text-align: center;
+      padding: 30px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.2em;
+      color: #ff4d6d;
+    }
+    .timer {
+      font-size: 1.8em;
+      margin: 20px 0;
+      color: #ffb6c1;
+    }
+    .photos {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .photos img {
+      width: 250px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+    }
+    .message {
+      margin-top: 40px;
+      font-size: 1.5em;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #e0e0e0;
+    }
+    audio {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Feliz Dia dos Namorados ❤️</h1>
+
+  <div class="timer" id="timer">Carregando...</div>
+
+  <div class="photos">
+    <img src="foto1.jpg" alt="Foto 1">
+    <img src="foto2.jpg" alt="Foto 2">
+    <img src="foto3.jpg" alt="Foto 3">
+  </div>
+
+  <audio autoplay loop controls>
+    <source src="alianca.mp3" type="audio/mpeg">
+    Seu navegador não suporta o elemento de áudio.
+  </audio>
+
+  <div class="message">
+    Cada segundo com você é um presente. Que nosso amor cresça mais e mais a cada dia. 💖
+  </div>
+
+  <script>
+    const startDate = new Date("2024-10-19T00:00:00");
+
+    function updateTimer() {
+      const now = new Date();
+      const diff = now - startDate;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("timer").textContent =
+        `Estamos juntos há ${days} dias, ${hours}h ${minutes}m ${seconds}s 💞`;
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
+  </script>
+
+</body>
+</html>
